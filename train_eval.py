@@ -273,7 +273,7 @@ def test(opt):
     encoder.load_state_dict(checkpoint['en'])
     decoder.load_state_dict(checkpoint['de'])
 
-    with torch.no_grad():
+    with torch.no_grad():   #停用梯度跟踪，节省内存
         #切换模式
         encoder = encoder.to(opt.device)
         decoder = decoder.to(opt.device)
